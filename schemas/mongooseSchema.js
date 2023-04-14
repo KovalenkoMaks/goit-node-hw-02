@@ -23,7 +23,7 @@ const contactSchema = new Schema(
       default: false,
     },
   },
-  { versionKey: false, timestamps: true }
+  { versionKey: false }
 );
 
 module.exports = contactSchema;
