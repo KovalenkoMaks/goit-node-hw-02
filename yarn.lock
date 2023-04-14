@@ -303,14 +303,6 @@
   dependencies:
     "fill-range" "^7.0.1"
 
-"bson@^4.0.0":
-  "integrity" "sha512-303qcGsM1cosFi2xYlHViuGTHpC+gDf59aWcxB+/GZY4skzXG6ta2mw6OPlBOA4mtOyZJMvgp4IWdbmXs4tKpw=="
-  "resolved" "https://registry.npmjs.org/bson/-/bson-4.0.0.tgz"
-  "version" "4.0.0"
-  dependencies:
-    "buffer" "^5.1.0"
-    "long" "^4.0.0"
-
 "bson@^5.0.1":
   "integrity" "sha512-HevkSpDbpUfsrHWmWiAsNavANKYIErV2ePXllp1bwq5CDreAaFVj6RVlZpJnxK4WWDCJ/5jMUpaY6G526q3Hjg=="
   "resolved" "https://registry.npmjs.org/bson/-/bson-5.2.0.tgz"
