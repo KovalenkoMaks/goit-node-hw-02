@@ -1,14 +1,10 @@
 const { Schema } = require("mongoose");
-const { handelMongooseError } = require("../../schemas");
+const { handelMongooseError } = require("../../utils");
 
 const emailRegex = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-z]+)$/;
 
 const userSchema = new Schema(
   {
-    name: {
-      type: String,
-      required: [true, "Set userName"],
-    },
     password: {
       type: String,
       required: [true, "Set password for user"],

@@ -10,5 +10,10 @@ router.post(
   validateBody(schema.registrationSchema),
   tryCatchWrapper(ctrl.registration)
 );
+router.post(
+  "/login",
+  validateBody(schema.loginSchema),
+  tryCatchWrapper(ctrl.login)
+);
 
 module.exports = router;
