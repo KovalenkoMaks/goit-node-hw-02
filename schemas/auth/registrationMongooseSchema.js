@@ -1,6 +1,6 @@
 const { Schema } = require("mongoose");
 const { handelMongooseError } = require("../../utils");
-
+const subscription = ["starter", "pro", "business"];
 const emailRegex = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-z]+)$/;
 
 const userSchema = new Schema(
@@ -17,13 +17,12 @@ const userSchema = new Schema(
     },
     subscription: {
       type: String,
-      enum: ["starter", "pro", "business"],
+      enum: subscription,
       default: "starter",
     },
-    token: String,
-    owner: {
-      type: Schema.Types.ObjectId,
-      ref: "user",
+    token: {
+      type: String,
+      default: "",
     },
   },
   { versionKey: false }
