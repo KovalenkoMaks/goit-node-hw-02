@@ -11,15 +11,14 @@ const updateAvatar = async (req, res) => {
   const resultUpload = path.join(avatarsDir, avatarRenamed);
   await fs.rename(tempUpload, resultUpload);
   const avatarURL = path.join("avatars", avatarRenamed);
-  console.log(avatarURL);
+
   Jimp.read(`public/${avatarURL}`, (err, avatarRenamed) => {
     if (err) throw err;
     avatarRenamed
       .resize(250, 250) // resize
       .write(`public/${avatarURL}`); // save
-    // console.log(tempUpload);
   });
-  //
+
   await User.findByIdAndUpdate(_id, { avatarURL });
 
   res.json({
