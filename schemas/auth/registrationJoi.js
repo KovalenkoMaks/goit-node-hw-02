@@ -1,6 +1,10 @@
 const Joi = require("joi");
 const emailRegex = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-z]+)$/;
 const registrationSchema = Joi.object({
+  name: Joi.string().required().messages({
+    "any.required": `"Name" is a required field`,
+    "string.empty": `"Name" cannot be an empty field`,
+  }),
   email: Joi.string().pattern(emailRegex).required().messages({
     "any.required": `"Email" is a required field`,
     "string.empty": `"Email" cannot be an empty field`,
