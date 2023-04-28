@@ -5,7 +5,11 @@ const addSchema = Joi.object({
     "any.required": `"Name" is a required field`,
     "string.empty": `"Name" cannot be an empty field`,
   }),
-  email: Joi.string().required().messages({
+  // email: Joi.string().required().messages({
+  //   "any.required": `"Email" is a required field`,
+  //   "string.empty": `"Email" cannot be an empty field`,
+  // }),
+  email: Joi.string().messages({
     "any.required": `"Email" is a required field`,
     "string.empty": `"Email" cannot be an empty field`,
   }),
