@@ -12,7 +12,7 @@ const contactSchema = new Schema(
       type: String,
       unique: true,
       mattch: emailRegex,
-      required: [true, "Set email for contact"],
+      // required: [true, "Set email for contact"],
     },
     phone: {
       type: String,

@@ -1,7 +1,7 @@
 const express = require("express");
 const ctrl = require("../../controllers/auth");
 const { tryCatchWrapper } = require("../../utils");
-const { validateBody, authentication } = require("../../middelwares");
+const { validateBody, authentication, upload } = require("../../middelwares");
 const schema = require("../../schemas/");
 const router = express.Router();
 
@@ -22,5 +22,11 @@ router.patch(
   authentication,
   validateBody(schema.subscriptionSchema),
   tryCatchWrapper(ctrl.subscription)
+);
+router.patch(
+  "/avatars",
+  authentication,
+  upload.single("avatar"),
+  tryCatchWrapper(ctrl.updateAvatar)
 );
 module.exports = router;

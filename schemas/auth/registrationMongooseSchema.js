@@ -5,6 +5,10 @@ const emailRegex = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-z]+)$/;
 
 const userSchema = new Schema(
   {
+    name: {
+      type: String,
+      required: [true, "Set Name for user"],
+    },
     password: {
       type: String,
       required: [true, "Set password for user"],
@@ -19,6 +23,10 @@ const userSchema = new Schema(
       type: String,
       enum: subscription,
       default: "starter",
+    },
+    avatarUrl: {
+      type: String,
+      required: true,
     },
     token: {
       type: String,
