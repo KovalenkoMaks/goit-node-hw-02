@@ -29,4 +29,11 @@ router.patch(
   upload.single("avatar"),
   tryCatchWrapper(ctrl.updateAvatar)
 );
+router.get('/verify/:verificationToken', tryCatchWrapper(ctrl.verifyEmail));
+
+router.post(
+  '/verify',
+  validateBody(schema.emailVerify),
+  tryCatchWrapper(ctrl.resendEmail)
+);
 module.exports = router;

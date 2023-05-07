@@ -6,6 +6,7 @@ const userSchema = require("./auth/registrationMongooseSchema");
 const registrationSchema = require("./auth/registrationJoi");
 const loginSchema = require("./auth/loginJoi");
 const subscriptionSchema = require("./auth/subscriptionJoi");
+const emailVerify = require('./auth/emailVerify')
 module.exports = {
   addSchema,
   updateSchema,
@@ -15,4 +16,5 @@ module.exports = {
   registrationSchema,
   loginSchema,
   subscriptionSchema,
+  emailVerify,
 };
